@@ -40,7 +40,7 @@
             </div>
 
             <button id="addRecordButton" class="button primary fullSize">
-                Adicionar registro
+                ADICIONAR REGISTRO
             </button>
 
             <hr />
@@ -96,7 +96,46 @@
 
             <br>
             <button id="addRecordSaveButton" class="button primary fullSize">
-                Salvar
+                SALVAR
+            </button>
+        </div>
+    </div>
+
+    <div id="screenUpdateRecord" class="screen hidden">
+        <div class="screenHeader">
+            <img id="updateRecordBackButton" class="backButton" src="/res/img/ic_arrow_back.png" width="32px" alt="Back">
+            <h1 class="screenTitle">Editar registro</h1>
+        </div>
+
+        <div class="screenContent">
+            <span id="recordId" class="hidden"></span>
+            <div class="field">
+                <label for="inputUpdateTitle">Titulo:</label>
+                <input id="inputUpdateTitle" type="text" autocomplete="off" />
+            </div>
+            <div class="field">
+                <label for="inputUpdateDate">Data:</label>
+                <input id="inputUpdateDate" type="date" autocomplete="off" />
+            </div>
+            <div class="field">
+                <label for="inputUpdateType">Tipo:</label>
+                <select id="inputUpdateType">
+                    <option value="1">Gasto</option>
+                    <option value="2">Ganho</option>
+                </select>
+            </div>
+            <div class="field">
+                <label for="inputUpdateValue">Valor:</label>
+                <input id="inputUpdateValue" type="number" placeholder="0.00" step=".01" autocomplete="off" />
+            </div>
+
+            <br>
+            <button id="updateRecordSaveButton" class="button primary fullSize">
+                SALVAR
+            </button>
+            <br>
+            <button id="updateRecordDeleteButton" class="button danger fullSize">
+                EXCLUIR
             </button>
         </div>
     </div>

@@ -63,6 +63,12 @@ h1 {
     color: white;
 }
 
+.danger {
+    background-color: #d31818;
+    border: thin solid #dce5e8;
+    color: white;
+}
+
 .screenContent {
     margin-top: 3rem;
 }
@@ -165,4 +171,7 @@ ul {
 .recordTitle {
     font-weight: 700;
 }
-  
+
+#updateRecordDeleteButton {
+    margin-top: 1rem;
+}
