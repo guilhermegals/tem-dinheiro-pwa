@@ -5,6 +5,7 @@ onload = () => {
     if (currentRecords) {
         records = currentRecords;
     }
+    updateBalance();
 
     document.querySelector('#addRecordButton').onclick = () => {
         clearFields();
@@ -43,6 +44,7 @@ const addRecord = () => {
         sortRecords();
         saveRecords();
         clearFields();
+        updateBalance();
         show('screenHome');
     } else {
         alert('Verifique se preencheu os campos corretamente')
@@ -60,8 +62,36 @@ const sortRecords = () => {
     records.sort(function (a, b) {
         return new Date(b.date) - new Date(a.date);
     });
-}
+};
 
 const saveRecords = () => {
-    localStorage.setItem('records', JSON.stringify(records)); 
-}
+    localStorage.setItem('records', JSON.stringify(records));
+};
+
+const updateBalance = () => {
+    let totalExpenses = 0;
+    let expenses = records.filter(function (record) {
+        return record.type == '1';
+    });
+    expenses.forEach((record) => {
+        totalExpenses += +record.quantity;
+    });
+
+    let totalIncomes = 0;
+    let incomes = records.filter(function (record) {
+        return record.type == '2';
+    });
+    incomes.forEach((record) => {
+        totalIncomes += +record.quantity;
+    });
+
+    window.document.getElementById('totalExpenses').innerText = 'R$ ' + totalExpenses.toFixed(2);
+    window.document.getElementById('totalIncomes').innerText = 'R$ ' + totalIncomes.toFixed(2);
+    window.document.getElementById('balanceValue').innerText = 'R$ ' + (totalIncomes - totalExpenses).toFixed(2);
+
+    if(records.length > 0){
+        window.document.getElementById('noRecordsContent').classList.add('hidden');
+    } else {
+        window.document.getElementById('noRecordsContent').classList.remove('hidden');
+    }
+};
