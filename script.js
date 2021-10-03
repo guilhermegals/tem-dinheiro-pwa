@@ -94,4 +94,31 @@ const updateBalance = () => {
     } else {
         window.document.getElementById('noRecordsContent').classList.remove('hidden');
     }
+
+    showRecords();
 };
+
+const showRecords = () => {
+    const list = window.document.getElementById('records');
+    list.innerHTML = '';
+
+    records.forEach((record) => {
+        let template = window.document.getElementById('recordTemplate').cloneNode(true);
+        template.classList.remove('hidden');
+        template.querySelector('.recordTitle').innerText = record.title;
+        template.querySelector('.recordDate').innerText = record.date;
+        let ammount = parseFloat(record.quantity, 10);
+        template.querySelector('.recordValue').innerText = 'R$ ' + ammount.toFixed(2);
+
+
+        if(record.type == '1') {
+            template.classList.add('expensesLight')
+        } else {
+            template.classList.add('incomesLight')
+        }
+
+        template.setAttribute('id', record.id);
+
+        list.appendChild(template);
+    });
+}
