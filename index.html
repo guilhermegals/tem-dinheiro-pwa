@@ -2,7 +2,7 @@
 <html>
 
 <head lang="pt-BR">
-    <title>Minha primeira PWA</title>
+    <title>Tem dinheiro?</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="style.css" rel="stylesheet" type="text/css" />
@@ -16,12 +16,53 @@
     <link rel="apple-touch-icon" sizes="152x152" href="/res/img/icons/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/res/img/icons/apple-icon-180x180.png">
     <script src="script.js">
-        navigator.serviceWorker.register('/worker.js')
+        //navigator.serviceWorker.register('/worker.js')
     </script>
 </head>
 
 <body>
-    <h1>Hello World!</h1>
+    <div id="screenHome" class="screen">
+        <div class="screenHeader">
+            <h1 class="screenTitle">Tem dinheiro?</h1>
+        </div>
+        <div class="screenContent">
+            <div class="balanceResumeContent">
+                <h1 id="balanceTitle">Saldo:</h1>
+                <span id="balanceValue">R$ 0,00</span>
+            </div>
+            <div class="balanceResumeContent expenses">
+                <h3>Total de gastos: </h3>
+                <span id="totalExpenses">R$ 0,00</span>
+            </div>
+            <div class="balanceResumeContent incomes">
+                <h3>Total de ganhos: </h3>
+                <span id="totalIncomes">R$ 0,00</span>
+            </div>
+
+            <button id="addRecordButton" class="button primary fullSize">
+                Adicionar registro
+            </button>
+
+            <hr />
+
+            <div>
+                <div id="noRecordsContent">
+                    <h2 id="noRecordsText">Você não possui registros</h2>
+                </div>
+                <div id="recondsContent">
+                    <ul id="records" class="hidden">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="screenAddRecord" class="screen hidden">
+        <div class="screenHeader">
+            <h1 class="screenTitle">Adicionar registro</h1>
+        </div>
+    </div>
 </body>
 
 </html>
