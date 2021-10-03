@@ -39,10 +39,10 @@ h1 {
     top: 0;
     background-color: #89D964;
     width: 100%;
-    display: block;
+    display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    
 }
 
 .screenTitle{
@@ -99,3 +99,55 @@ h1 {
 .incomes {
     color: green;
 }
+
+.field {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.field input {
+    flex: 1;
+    height: 2rem;
+    padding: 0.3rem 0.7rem;
+    color: #000;
+    background: #fff;
+    border: thin solid #dce5e8;
+    border-radius: 0.25rem;
+    height: 2rem;
+}
+
+.field select {
+    flex: 1;
+    height: 2rem;
+    padding: 0.3rem 0.7rem;
+    color: #000;
+    background: #fff;
+    border: thin solid #dce5e8;
+    border-radius: 0.25rem;
+    height: 2rem;
+}
+
+.field label {
+    margin-right: 1rem;
+}
+
+.backButton {
+    margin-left: 1rem;
+}
+
+li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.recordTitle {
+    font-weight: 700;
+}
+
+
+  

@@ -50,8 +50,17 @@
                     <h2 id="noRecordsText">Você não possui registros</h2>
                 </div>
                 <div id="recondsContent">
-                    <ul id="records" class="hidden">
-
+                    <ul id="records">
+                        <li id="recordTemplate" class="hidden">
+                            <div class="recordItem">
+                                <span name="recordTitle" class="recordTitle">Titulo</span>
+                                <br>
+                                <span name="recordDate" class="recordDate">01/01/2021</span>
+                                <br>
+                                <span name="recordValue" class="recordValue">R$ 50,00</span>
+                                <hr>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -60,7 +69,35 @@
 
     <div id="screenAddRecord" class="screen hidden">
         <div class="screenHeader">
+            <img id="addRecordBackButton" class="backButton" src="/res/img/ic_arrow_back.png" width="32px" alt="Back">
             <h1 class="screenTitle">Adicionar registro</h1>
+        </div>
+
+        <div class="screenContent">
+            <div class="field">
+                <label for="inputTitle">Titulo:</label>
+                <input id="inputTitle" type="text" autocomplete="off" />
+            </div>
+            <div class="field">
+                <label for="inputDate">Data:</label>
+                <input id="inputDate" type="date" autocomplete="off" />
+            </div>
+            <div class="field">
+                <label for="inputType">Tipo:</label>
+                <select id="inputType">
+                    <option value="1">Gasto</option>
+                    <option value="2">Ganho</option>
+                </select>
+            </div>
+            <div class="field">
+                <label for="inputValue">Valor:</label>
+                <input id="inputValue" type="number" placeholder="0.00" step=".01" autocomplete="off" />
+            </div>
+
+            <br>
+            <button id="addRecordSaveButton" class="button primary fullSize">
+                Salvar
+            </button>
         </div>
     </div>
 </body>
