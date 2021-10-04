@@ -1,4 +1,4 @@
-# NOME DA APLICAÇÃO
+# Tem dinheiro?
 
 **Guilherme Augusto Leite Santos**
 
@@ -8,13 +8,15 @@ O aplicativo "Tem dinheiro?" tem como objetivo auxiliar no controle de gastos do
 
 ### Tela principal
 
-Nesta tela, o usuário ...
+Nesta tela, o usuário poderá visualizar qual é o seu saldo atual, o total de gastos e ganhos. Além do mais é listado cada registro com suas informações e um indicativo de tipo baseado na cor. Clicando em "Adicionar registro" ele é direcionado para a tela de adição de registro. Clicando em algum registro da lista ele é direcionado para a tela de edição de registros.
 
-### Tela de ....
+### Tela de Adição de registro
 
-Nesta outra tela, o usuário ...
+Nesta tela, o usuário poderá preencher os campos referentes ao novo registro, tal como Título, Data, Tipo de Registro e Valor. Caso algum campo não tenha sido preenchido corretamente é informado um erro para o usuário. Ao salvar ele é direcionado para tela principal com os dados atualizados. O usuário também poderá voltar a tela principal clicando na seta no canto superior esquerdo do aplicativo.
 
-...
+### Tela de Edição de registro
+
+Nesta tela, o usuário poderá alterar os valores do registro selecionado, tal como Título, Data, Tipo de Registro e Valor. Caso algum campo não tenha sido preenchido corretamente é informado um erro para o usuário. Ao salvar ele é direcionado para tela principal com os dados atualizados. Além do mais o usuário tem a opção de excluir esse registro. O usuário também poderá voltar a tela principal clicando na seta no canto superior esquerdo do aplicativo
 
 ## 2. Dados do usuário
 
