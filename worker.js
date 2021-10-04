@@ -1,4 +1,4 @@
-var cacheName = 'tem-dinheiro';
+var cacheName = 'tem-dinheiro-101';
 
 self.addEventListener('install', function (event) {
     console.log("Worker: Installed")
@@ -10,6 +10,7 @@ self.addEventListener('install', function (event) {
             '/manifest.webmanifest',
             '/style.css',
             '/script.js',
+            '/res/img/ic_arrow_back.png',
             '/res/img/icons/favicon.ico',
             '/res/img/icons/android-icon-36x36.png',
             '/res/img/icons/android-icon-48x48.png',
