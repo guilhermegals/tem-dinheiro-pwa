@@ -1,5 +1,6 @@
 let records = [];
 
+// Função para carregar todos os metodos e ações da aplicação
 onload = () => {
     const currentRecords = JSON.parse(localStorage.getItem('records'));
     if (currentRecords) {
@@ -33,11 +34,13 @@ onload = () => {
     };
 };
 
+// Função para abrir uma nova tela
 const show = (comp) => {
     document.querySelectorAll('body > .screen').forEach((c) => c.classList.add('hidden'));
     document.querySelector('#' + comp).classList.remove('hidden');
 };
 
+// Função para adicionar um novo registro
 const addRecord = () => {
     let title = window.document.getElementById('inputTitle').value;
     let date = window.document.getElementById('inputDate').value;
@@ -63,6 +66,7 @@ const addRecord = () => {
     }
 };
 
+// Função para atualizar um registro
 const updateRecord = () => {
     let title = window.document.getElementById('inputUpdateTitle').value;
     let date = window.document.getElementById('inputUpdateDate').value;
@@ -91,6 +95,7 @@ const updateRecord = () => {
     }
 };
 
+// Funlão para deletar um registro
 const deleteRecord = () => {
     let id = window.document.getElementById('recordId').innerText;
     records = records.filter((record) => record.id != id);
@@ -102,6 +107,7 @@ const deleteRecord = () => {
     show('screenHome');
 };
 
+// Função para limpar os campos da tela de adição de registro
 const clearFields = () => {
     window.document.getElementById('inputTitle').value = '';
     window.document.getElementById('inputDate').value = '';
@@ -109,6 +115,7 @@ const clearFields = () => {
     window.document.getElementById('inputValue').value = '';
 };
 
+// Função parar limpar os campos da tela de edição de registro
 const clearFieldsUpdate = () => {
     window.document.getElementById('inputUpdateTitle').value = '';
     window.document.getElementById('inputUpdateDate').value = '';
@@ -116,16 +123,20 @@ const clearFieldsUpdate = () => {
     window.document.getElementById('inputUpdateValue').value = '';
 };
 
+// Função para reeordernar os registros com base na data
 const sortRecords = () => {
     records.sort(function (a, b) {
         return new Date(b.date) - new Date(a.date);
     });
 };
 
+// Função para salvar os registros no localstorage
 const saveRecords = () => {
     localStorage.setItem('records', JSON.stringify(records));
 };
 
+// Função para atualizar todos os componentes visuais da tela principal
+// Nele é atualizado a lista de registros e os saldos
 const updateBalance = () => {
     let totalExpenses = 0;
     let expenses = records.filter(function (record) {
@@ -168,6 +179,7 @@ const updateBalance = () => {
     showRecords();
 };
 
+// Função para atualizar e montar a lista de registros
 const showRecords = () => {
     const list = window.document.getElementById('records');
     list.innerHTML = '';

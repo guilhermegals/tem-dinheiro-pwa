@@ -3,6 +3,7 @@ var cacheName = 'tem-dinheiro-101';
 self.addEventListener('install', function (event) {
     console.log("Worker: Installed")
 
+    // Adição dos arquivo que serão armazenados no Cache
     caches.open(cacheName).then((cache) => {
         cache.addAll([
             '/',
@@ -49,6 +50,7 @@ self.addEventListener('activate', (e) => {
 self.addEventListener('fetch', function (event) { 
     console.log("Worker: Fetched")
 
+    // Atualização dos arquivos de cache
     let response = caches.open(cacheName).then((cache) => { 
       return cache.match(event.request).then((resource) => { 
         if (resource) 
